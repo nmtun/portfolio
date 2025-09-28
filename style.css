@@ -65,9 +65,28 @@ header.scrolled {
     text-decoration: none;
     display: flex;
     align-items: center;
+    gap: 0.8rem;
+    transition: var(--transition);
 }
 
-.logo span {
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.logo-img {
+    height: 40px;
+    width: 40px;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.logo-img:hover {
+    transform: rotate(5deg);
+    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+}
+
+.logo-text span {
     color: var(--primary);
 }
 
@@ -152,14 +171,129 @@ header.scrolled {
 .hero-text h1 {
     font-size: 3.5rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
     line-height: 1.2;
     opacity: 0;
     animation: fadeInUp 1s 0.4s forwards;
 }
 
+.hero-text h1:first-of-type {
+    margin-bottom: 0.2rem;
+    animation: fadeInUp 1s 0.4s forwards;
+}
+
+.hero-text h1:last-of-type {
+    margin-bottom: 1.5rem;
+    min-height: 4.2rem; /* Reserve space for typewriter */
+    animation: fadeInUp 1s 0.6s forwards;
+}
+
 .hero-text h1 span {
     color: var(--primary);
+}
+
+/* Typewriter Effect */
+.typewriter {
+    position: relative;
+    display: inline-block;
+    min-height: 1.2em; /* Prevent layout shift */
+    border-right: 3px solid transparent; /* Space for cursor */
+}
+
+.typewriter::after {
+    content: '|';
+    position: absolute;
+    right: -12px;
+    top: 0;
+    color: var(--primary);
+    animation: blink 1s infinite;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 1.2;
+}
+
+.typewriter.typing::after {
+    animation: blink 0.5s infinite;
+    color: var(--accent);
+}
+
+.typewriter.finished::after {
+    animation: blink 1.2s infinite;
+    color: var(--primary);
+}
+
+/* Enhanced cursor styles */
+.typewriter::after {
+    text-shadow: 0 0 5px currentColor;
+    transition: color 0.3s ease;
+}
+
+/* Gradient text effect for typewriter */
+.typewriter {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+    font-weight: 600;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Fallback for browsers that don't support background-clip */
+@supports not (-webkit-background-clip: text) {
+    .typewriter {
+        color: var(--primary);
+        background: none;
+        -webkit-text-fill-color: initial;
+    }
+}
+
+/* Typing animation enhancement */
+.typewriter.typing {
+    position: relative;
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Responsive typewriter cursor */
+@media (max-width: 768px) {
+    .typewriter::after {
+        right: -8px;
+    }
+}
+
+@media (max-width: 576px) {
+    .typewriter::after {
+        right: -6px;
+    }
 }
 
 .hero-text p {
@@ -801,10 +935,31 @@ footer {
     font-size: 2rem;
     color: var(--light);
     margin-bottom: 1.5rem;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    transition: var(--transition);
 }
 
-.footer-logo span {
+.footer-logo:hover {
+    transform: translateY(-3px);
+}
+
+.footer-logo-img {
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.footer-logo:hover .footer-logo-img {
+    transform: rotate(-5deg);
+    box-shadow: 0 8px 20px rgba(108, 99, 255, 0.4);
+}
+
+.footer-logo-text span {
     color: var(--primary);
 }
 
@@ -988,6 +1143,22 @@ footer {
     animation: pulse 0.3s ease-in-out;
 }
 
+@keyframes logoGlow {
+    0% { box-shadow: 0 0 5px rgba(108, 99, 255, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(108, 99, 255, 0.6); }
+    100% { box-shadow: 0 0 5px rgba(108, 99, 255, 0.3); }
+}
+
+.logo-img:hover {
+    transform: rotate(5deg);
+    animation: logoGlow 2s ease-in-out infinite;
+}
+
+.footer-logo:hover .footer-logo-img {
+    transform: rotate(-5deg);
+    animation: logoGlow 2s ease-in-out infinite;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 10px;
@@ -1028,6 +1199,10 @@ footer {
         font-size: 4rem;
     }
     
+    .hero-text h1:last-of-type {
+        min-height: 4.8rem;
+    }
+    
     .hero-text h4 {
         font-size: 1.8rem;
     }
@@ -1049,6 +1224,10 @@ footer {
     
     .hero-text h1 {
         font-size: 4.5rem;
+    }
+    
+    .hero-text h1:last-of-type {
+        min-height: 5.4rem;
     }
     
     .hero-image img {
@@ -1082,6 +1261,34 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .logo {
+        font-size: 1.5rem;
+        gap: 0.5rem;
+    }
+    
+    .logo-img {
+        height: 35px;
+        width: 35px;
+    }
+    
+    .footer-logo {
+        font-size: 1.8rem;
+        gap: 0.8rem;
+    }
+    
+    .footer-logo-img {
+        height: 45px;
+        width: 45px;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero-text h1:last-of-type {
+        min-height: 3.4rem;
+    }
+    
     .nav-links {
         position: fixed;
         top: 0;
@@ -1130,8 +1337,32 @@ footer {
 }
 
 @media (max-width: 576px) {
+    .logo {
+        font-size: 1.3rem;
+        gap: 0.4rem;
+    }
+    
+    .logo-img {
+        height: 30px;
+        width: 30px;
+    }
+    
+    .footer-logo {
+        font-size: 1.6rem;
+        gap: 0.6rem;
+    }
+    
+    .footer-logo-img {
+        height: 40px;
+        width: 40px;
+    }
+    
     .hero-text h1 {
         font-size: 2.2rem;
+    }
+    
+    .hero-text h1:last-of-type {
+        min-height: 2.6rem;
     }
     
     .hero-btns {

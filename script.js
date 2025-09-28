@@ -1,3 +1,106 @@
+// Typewriter Effect
+class Typewriter {
+    constructor(element, texts, options = {}) {
+        this.element = element;
+        this.texts = texts;
+        this.speed = options.speed || 100;
+        this.deleteSpeed = options.deleteSpeed || 50;
+        this.pauseTime = options.pauseTime || 2000;
+        this.currentTextIndex = 0;
+        this.currentCharIndex = 0;
+        this.isDeleting = false;
+        this.isPaused = false;
+        
+        this.init();
+    }
+    
+    init() {
+        this.element.classList.add('typing');
+        this.type();
+    }
+    
+    type() {
+        const currentText = this.texts[this.currentTextIndex];
+        
+        if (!this.isDeleting) {
+            // Typing forward
+            this.element.textContent = currentText.substring(0, this.currentCharIndex + 1);
+            this.currentCharIndex++;
+            
+            if (this.currentCharIndex === currentText.length) {
+                // Finished typing current text
+                this.isPaused = true;
+                this.element.classList.remove('typing');
+                this.element.classList.add('finished');
+                
+                setTimeout(() => {
+                    this.isPaused = false;
+                    this.isDeleting = true;
+                    this.element.classList.remove('finished');
+                    this.element.classList.add('typing');
+                    this.type();
+                }, this.pauseTime);
+                return;
+            }
+        } else {
+            // Deleting backward
+            this.element.textContent = currentText.substring(0, this.currentCharIndex - 1);
+            this.currentCharIndex--;
+            
+            if (this.currentCharIndex === 0) {
+                // Finished deleting
+                this.isDeleting = false;
+                this.currentTextIndex = (this.currentTextIndex + 1) % this.texts.length;
+                
+                setTimeout(() => {
+                    this.type();
+                }, 200);
+                return;
+            }
+        }
+        
+        const speed = this.isDeleting ? this.deleteSpeed : this.speed;
+        setTimeout(() => this.type(), speed);
+    }
+}
+
+// Initialize typewriter when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    const typewriterElement = document.getElementById('typewriter');
+    const texts = [
+        'Fullstack Developer',
+        'Web Developer',
+        'Software Engineer',
+        'Problem Solver',
+        'Tech Enthusiast'
+    ];
+    
+    if (typewriterElement) {
+        // Add delay to sync with page animations
+        setTimeout(() => {
+            // Add initial animation class
+            typewriterElement.style.opacity = '0';
+            typewriterElement.style.transform = 'translateY(20px)';
+            typewriterElement.style.transition = 'all 0.5s ease';
+            
+            // Fade in the typewriter
+            setTimeout(() => {
+                typewriterElement.style.opacity = '1';
+                typewriterElement.style.transform = 'translateY(0)';
+            }, 100);
+            
+            // Start typing after fade in
+            setTimeout(() => {
+                new Typewriter(typewriterElement, texts, {
+                    speed: 120,
+                    deleteSpeed: 60,
+                    pauseTime: 2000
+                });
+            }, 600);
+        }, 1200); // Start after 1.2 seconds
+    }
+});
+
 // Mobile Navigation
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
