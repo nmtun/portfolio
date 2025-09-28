@@ -154,28 +154,7 @@ scrollTopBtn.addEventListener('click', () => {
     });
 });
 
-// Portfolio Filter
-const filterBtns = document.querySelectorAll('.filter-btn');
-const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        // Remove active class from all buttons
-        filterBtns.forEach(btn => btn.classList.remove('active'));
-        // Add active class to clicked button
-        btn.classList.add('active');
-        
-        const filter = btn.getAttribute('data-filter');
-        
-        portfolioItems.forEach(item => {
-            if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                item.style.display = 'block';
-            } else {
-                item.style.display = 'none';
-            }
-        });
-    });
-});
+// Portfolio Filter will be handled by enhanced version below
 
 // Animate skills on scroll
 const skillProgress = document.querySelectorAll('.skill-progress');
@@ -187,18 +166,153 @@ function animateSkills() {
     });
 }
 
+// Scroll Animation System
+class ScrollAnimator {
+    constructor() {
+        this.animatedElements = new Set();
+        this.init();
+    }
+    
+    init() {
+        // Create intersection observer with multiple thresholds for smoother animations
+        this.observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !this.animatedElements.has(entry.target)) {
+                    this.animateElement(entry.target);
+                    this.animatedElements.add(entry.target);
+                }
+            });
+        }, {
+            threshold: [0.1, 0.2],
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        // Start observing elements
+        this.observeElements();
+    }
+    
+    observeElements() {
+        // Observe all scroll animate elements
+        const elements = document.querySelectorAll(`
+            .scroll-animate,
+            .scroll-animate-left,
+            .scroll-animate-right,
+            .scroll-animate-scale,
+            .scroll-stagger,
+            .portfolio-item,
+            .contact-card,
+            .skill-badges
+        `);
+        
+        elements.forEach(element => {
+            this.observer.observe(element);
+        });
+    }
+    
+    animateElement(element) {
+        // Add animate class with slight delay for smoother effect
+        setTimeout(() => {
+            element.classList.add('animate');
+            
+            // Special handling for skill badges
+            if (element.classList.contains('skill-badges')) {
+                this.animateSkillBadges(element);
+            }
+            
+            // Trigger skills animation for about section
+            if (element.closest('#about')) {
+                setTimeout(() => {
+                    animateSkills();
+                }, 300);
+            }
+        }, 100);
+    }
+    
+    animateSkillBadges(skillBadges) {
+        const badges = skillBadges.querySelectorAll('img');
+        badges.forEach((badge, index) => {
+            setTimeout(() => {
+                badge.style.opacity = '1';
+                badge.style.transform = 'translateY(0) scale(1)';
+            }, index * 100);
+        });
+    }
+    
+    // Method to manually trigger animation for specific elements
+    triggerAnimation(selector) {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach(element => {
+            if (!this.animatedElements.has(element)) {
+                this.animateElement(element);
+                this.animatedElements.add(element);
+            }
+        });
+    }
+}
+
+// Initialize scroll animator when DOM is loaded
+let scrollAnimator;
+
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+    scrollAnimator = new ScrollAnimator();
+    
+    // Trigger animations for elements already in view
+    setTimeout(() => {
+        scrollAnimator.triggerAnimation('.hero-content');
+    }, 500);
+});
+
+// Enhanced portfolio filter with animation reset
+// Get elements for portfolio filtering
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const allFilterBtns = document.querySelectorAll('.filter-btn');
+        const allPortfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        // Remove active class from all buttons
+        allFilterBtns.forEach(filterBtn => filterBtn.classList.remove('active'));
+        // Add active class to clicked button
+        btn.classList.add('active');
+        
+        const filter = btn.getAttribute('data-filter');
+        
+        allPortfolioItems.forEach((item, index) => {
+            // Reset animation
+            item.classList.remove('animate');
+            
+            if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                item.style.display = 'block';
+                // Re-trigger animation with stagger delay
+                setTimeout(() => {
+                    item.classList.add('animate');
+                }, index * 100);
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+});
+
 // Initialize skills animation when section is in view
 const aboutSection = document.getElementById('about');
-const observer = new IntersectionObserver((entries) => {
+const aboutObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            animateSkills();
-            observer.unobserve(entry.target);
+            // Trigger skill badges animation
+            setTimeout(() => {
+                const skillBadges = document.querySelectorAll('.skill-badges');
+                skillBadges.forEach(badges => {
+                    scrollAnimator.animateElement(badges);
+                });
+            }, 500);
+            
+            aboutObserver.unobserve(entry.target);
         }
     });
 }, { threshold: 0.2 });
 
-observer.observe(aboutSection);
+aboutObserver.observe(aboutSection);
 
 // Particles.js Configuration
 particlesJS("particles-js", {

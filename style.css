@@ -1028,6 +1028,131 @@ footer {
     100% { transform: translateY(0px); }
 }
 
+/* Scroll Animations */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.scroll-animate.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-animate-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.scroll-animate-left.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scroll-animate-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.scroll-animate-right.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scroll-animate-scale {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.scroll-animate-scale.animate {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.scroll-stagger {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.scroll-stagger.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger delay for multiple elements */
+.scroll-stagger:nth-child(1) { transition-delay: 0.1s; }
+.scroll-stagger:nth-child(2) { transition-delay: 0.2s; }
+.scroll-stagger:nth-child(3) { transition-delay: 0.3s; }
+.scroll-stagger:nth-child(4) { transition-delay: 0.4s; }
+.scroll-stagger:nth-child(5) { transition-delay: 0.5s; }
+.scroll-stagger:nth-child(6) { transition-delay: 0.6s; }
+
+/* Portfolio items stagger */
+.portfolio-item {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.portfolio-item.animate {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.portfolio-item:nth-child(1) { transition-delay: 0.1s; }
+.portfolio-item:nth-child(2) { transition-delay: 0.2s; }
+.portfolio-item:nth-child(3) { transition-delay: 0.3s; }
+.portfolio-item:nth-child(4) { transition-delay: 0.4s; }
+.portfolio-item:nth-child(5) { transition-delay: 0.5s; }
+.portfolio-item:nth-child(6) { transition-delay: 0.6s; }
+
+/* Skill badges animation */
+.skill-badges img {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.skill-badges.animate img {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.skill-badges img:nth-child(1) { transition-delay: 0.1s; }
+.skill-badges img:nth-child(2) { transition-delay: 0.15s; }
+.skill-badges img:nth-child(3) { transition-delay: 0.2s; }
+.skill-badges img:nth-child(4) { transition-delay: 0.25s; }
+.skill-badges img:nth-child(5) { transition-delay: 0.3s; }
+.skill-badges img:nth-child(6) { transition-delay: 0.35s; }
+.skill-badges img:nth-child(7) { transition-delay: 0.4s; }
+.skill-badges img:nth-child(8) { transition-delay: 0.45s; }
+.skill-badges img:nth-child(9) { transition-delay: 0.5s; }
+.skill-badges img:nth-child(10) { transition-delay: 0.55s; }
+.skill-badges img:nth-child(11) { transition-delay: 0.6s; }
+.skill-badges img:nth-child(12) { transition-delay: 0.65s; }
+
+/* Contact cards animation */
+.contact-card {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.contact-card.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.contact-card:nth-child(1) { transition-delay: 0.1s; }
+.contact-card:nth-child(2) { transition-delay: 0.2s; }
+.contact-card:nth-child(3) { transition-delay: 0.3s; }
+.contact-card:nth-child(4) { transition-delay: 0.4s; }
+
 /* Scroll to top button */
 .scroll-top {
     position: fixed;
@@ -1377,5 +1502,34 @@ footer {
     
     .portfolio-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* Mobile scroll animations adjustments */
+    .scroll-animate,
+    .scroll-animate-left,
+    .scroll-animate-right,
+    .scroll-animate-scale {
+        transform: translateY(30px);
+    }
+
+    .scroll-animate-left {
+        transform: translateX(-30px);
+    }
+
+    .scroll-animate-right {
+        transform: translateX(30px);
+    }
+
+    /* Reduce animation delays on mobile */
+    .portfolio-item:nth-child(n) { 
+        transition-delay: 0.05s; 
+    }
+    
+    .skill-badges img:nth-child(n) { 
+        transition-delay: 0.05s; 
+    }
+    
+    .contact-card:nth-child(n) { 
+        transition-delay: 0.1s; 
     }
 }
