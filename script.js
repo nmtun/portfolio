@@ -69,7 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const typewriterElement = document.getElementById('typewriter');
     const texts = [
         'Fullstack Developer',
-        'Web Developer',
         'Software Engineer',
         'Problem Solver',
         'Tech Enthusiast'
