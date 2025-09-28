@@ -132,13 +132,13 @@ header.scrolled {
 }
 
 .hero-content {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1.2fr 1fr;
     align-items: center;
-    gap: 2rem;
+    gap: 4rem;
 }
 
 .hero-text h4 {
@@ -214,11 +214,15 @@ header.scrolled {
     position: relative;
     opacity: 0;
     animation: fadeIn 1s 1s forwards;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-image img {
     width: 100%;
-    max-width: 500px;
+    max-width: 450px;
+    height: auto;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     transform: perspective(1000px) rotateY(-15deg);
@@ -317,33 +321,38 @@ header.scrolled {
     margin-bottom: 1.5rem;
 }
 
-.skills {
+.tech-skills {
     margin-top: 2rem;
 }
 
-.skill-item {
-    margin-bottom: 1.5rem;
+.skill-category {
+    margin-bottom: 2.5rem;
 }
 
-.skill-info {
+.skill-category h4 {
+    font-size: 1.4rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.skill-badges {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    align-items: center;
 }
 
-.skill-bar {
-    height: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
-    overflow: hidden;
+.skill-badges img {
+    height: 32px;
+    border-radius: 6px;
+    transition: var(--transition);
+    cursor: pointer;
 }
 
-.skill-progress {
-    height: 100%;
-    background-color: var(--primary);
-    border-radius: 5px;
-    position: relative;
-    transition: width 1.5s ease-in-out;
+.skill-badges img:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(108, 99, 255, 0.3);
 }
 
 /* Services Section */
@@ -463,6 +472,59 @@ header.scrolled {
 .portfolio-item:hover .portfolio-overlay h3,
 .portfolio-item:hover .portfolio-overlay p {
     transform: translateY(0);
+}
+
+.portfolio-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--accent);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    transform: translateY(20px);
+}
+
+.portfolio-link:hover {
+    background: var(--accent);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.portfolio-item:hover .portfolio-link {
+    transform: translateY(0);
+}
+
+.portfolio-link i {
+    font-size: 0.9rem;
+}
+
+.portfolio-coming-soon {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--primary);
+    border-radius: 25px;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.portfolio-item:hover .portfolio-coming-soon {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.portfolio-coming-soon i {
+    font-size: 0.9rem;
 }
 
 /* Testimonials Section */
@@ -589,6 +651,138 @@ textarea.form-control {
     box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3);
 }
 
+.submit-btn:disabled {
+    background-color: rgba(108, 99, 255, 0.5);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-loading {
+    display: none;
+}
+
+.error-message {
+    color: var(--accent);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    display: block;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.error-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.form-control.error {
+    border-color: var(--accent);
+    background-color: rgba(255, 107, 107, 0.1);
+}
+
+.form-control.success {
+    border-color: #4CAF50;
+    background-color: rgba(76, 175, 80, 0.1);
+}
+
+.form-status {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.form-status.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.form-status.success {
+    background-color: rgba(76, 175, 80, 0.1);
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    color: #4CAF50;
+}
+
+.form-status.error {
+    background-color: rgba(255, 107, 107, 0.1);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    color: var(--accent);
+}
+
+.form-status i {
+    margin-right: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.form-helper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+}
+
+.char-count {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 0.3s ease;
+}
+
+.char-count.warning {
+    color: var(--accent);
+}
+
+.char-count.limit {
+    color: #ff4444;
+}
+
+.form-control:focus + .form-helper .char-count {
+    color: var(--primary);
+}
+
+/* Enhanced form animations */
+.form-group {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.form-control {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.form-control:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.2);
+}
+
+/* Floating label effect */
+.form-group.filled .form-control {
+    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.floating-label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.form-group.filled .floating-label {
+    top: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--primary);
+}
+
 /* Footer */
 footer {
     background-color: rgba(0, 0, 0, 0.2);
@@ -710,6 +904,90 @@ footer {
     transform: translateY(-5px);
 }
 
+/* Heart Trail Effect */
+.heart-trail {
+    position: fixed;
+    width: 16px;
+    height: 16px;
+    pointer-events: none;
+    z-index: 9999;
+    color: var(--accent);
+    font-size: 16px;
+    animation: heartTrail 1.5s ease-out forwards;
+    user-select: none;
+}
+
+@keyframes heartTrail {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-20px) scale(1.2);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-40px) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* Cute floating animation for social links */
+.social-links a {
+    animation: floatSocial 3s ease-in-out infinite;
+}
+
+.social-links a:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.social-links a:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.social-links a:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.social-links a:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+@keyframes floatSocial {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+    }
+    25% {
+        transform: translateY(-5px) translateX(2px);
+    }
+    50% {
+        transform: translateY(0) translateX(0);
+    }
+    75% {
+        transform: translateY(5px) translateX(-2px);
+    }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.form-control.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.submit-btn.pulse {
+    animation: pulse 0.3s ease-in-out;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 10px;
@@ -738,11 +1016,52 @@ footer {
     scrollbar-color: var(--primary) var(--dark);
 }
 
+/* Large screens optimization */
+@media (min-width: 1440px) {
+    .hero-content {
+        max-width: 1600px;
+        gap: 6rem;
+        grid-template-columns: 1.3fr 1fr;
+    }
+    
+    .hero-text h1 {
+        font-size: 4rem;
+    }
+    
+    .hero-text h4 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-text p {
+        font-size: 1.3rem;
+    }
+    
+    .hero-image img {
+        max-width: 500px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .hero-content {
+        max-width: 1800px;
+        gap: 8rem;
+    }
+    
+    .hero-text h1 {
+        font-size: 4.5rem;
+    }
+    
+    .hero-image img {
+        max-width: 550px;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 992px) {
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 3rem;
     }
     
     .social-links {
