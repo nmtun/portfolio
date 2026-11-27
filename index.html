@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>nmtun | portfolio</title>
 
     <!-- Favicon and App Icons -->
@@ -22,8 +23,8 @@
     <meta property="og:title" content="nmtun | Full-stack Developer Portfolio">
     <meta property="og:description"
         content="Full-stack Developer with experience in modern web technologies. Check out my projects and skills.">
-    <meta property="og:image" content="logo.png">
-    <meta property="og:url" content="">
+    <meta property="og:image" content="https://nmtun.github.io/portfolio/logo.png">
+    <meta property="og:url" content="https://nmtun.github.io/portfolio/">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card Meta Tags -->
@@ -31,7 +32,7 @@
     <meta name="twitter:creator" content="@nmtun">
     <meta name="twitter:title" content="nmtun | Full-stack Developer Portfolio">
     <meta name="twitter:description" content="Full-stack Developer with experience in modern web technologies.">
-    <meta name="twitter:image" content="logo.png">
+    <meta name="twitter:image" content="https://nmtun.github.io/portfolio/logo.png">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link
@@ -46,7 +47,7 @@
 
     <!-- Header -->
     <header id="header">
-        <a href="#" class="logo">
+        <a href="#home" class="logo">
             <img src="logo.png" alt="nmtun logo" class="logo-img">
             <span class="logo-text">nm<span>tun</span></span>
         </a>
@@ -72,23 +73,23 @@
             <div class="hero-text">
                 <h4>Hello, I'm</h4>
                 <h1>Nguyen Manh Tung</h1>
-                <h1><span class="typewriter" id="typewriter"></span></h1>
+                <h1><span class="typewriter" id="typewriter">Software Engineer</span></h1>
                 <div class="hero-btns">
                     <a href="#portfolio" class="btn btn-primary">View My Projects</a>
-                    <a href="#contact" class="btn btn-secondary">Hire Me</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
                 </div>
             </div>
 
             <div class="hero-image">
                 <img src="https://i.pinimg.com/originals/e4/26/70/e426702edf874b181aced1e2fa5c6cde.gif"
-                    alt="Alex Carter">
+                    alt="">
 
                 <div class="social-links">
-                    <a href="https://github.com/nmtun"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/nguyen-manh-tung-12878530a/"><i
+                    <a href="https://github.com/nmtun" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/nguyen-manh-tung-12878530a/" aria-label="LinkedIn"><i
                             class="fab fa-linkedin-in"></i></a>
-                    <a href="https://facebook.com/rudeuss"><i class="fab fa-facebook"></i></a>
-                    <a href="https://www.instagram.com/toon_moc/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://facebook.com/rudeuss" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/toon_moc/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
@@ -111,8 +112,8 @@
                 <h2>Software Engineer & Full-stack Developer</h2>
                 
                 <div class="about-paragraphs">
-                    <p>I'm Nguyen Manh Tung, a software engineer from Vietnam focused on building full-stack web applications, scalable backend systems, and AI-powered products.</p>
-                    <p>I enjoy turning complex problems into simple, reliable and practical solutions, with a strong interest in system architecture, backend development and AI integration.</p>
+                    <p>I’m a software engineer based in Kanazawa, Japan. My experience spans banking software, anti-money laundering applications, and e-commerce backend development.</p>
+                    <p>I graduated from Hanoi University of Science and Technology through its Vietnam–Japan IT program. For my graduation project, I built TenantHub, a multi-tenant HR platform with a CV matching service.</p>
                 </div>
 
                 <!-- Status Card -->
@@ -123,7 +124,7 @@
                     <div class="status-info">
                         <span class="status-title">Currently</span>
                         <span class="status-role">Software Engineer</span>
-                        <span class="status-desc">Building web applications & AI-powered systems</span>
+                        <span class="status-desc">Digital Value · Banking systems</span>
                     </div>
                 </div>
 
@@ -140,6 +141,7 @@
                         <h4>Frontend</h4>
                         <div class="tech-chips">
                             <span class="tech-chip"><i class="fab fa-react"></i> React</span>
+                            <span class="tech-chip"><i class="fab fa-vuejs"></i> Vue / Nuxt</span>
                             <span class="tech-chip"><i class="fab fa-js"></i> JavaScript</span>
                             <span class="tech-chip"><i class="fab fa-html5"></i> HTML/CSS</span>
                         </div>
@@ -149,7 +151,8 @@
                         <h4>Backend</h4>
                         <div class="tech-chips">
                             <span class="tech-chip"><i class="fab fa-node-js"></i> Node.js</span>
-                            <span class="tech-chip"><i class="fas fa-server"></i> Express.js</span>
+                            <span class="tech-chip"><i class="fas fa-server"></i> C# / .NET</span>
+                            <span class="tech-chip"><i class="fas fa-server"></i> NestJS / Express.js</span>
                             <span class="tech-chip"><i class="fas fa-network-wired"></i> REST API</span>
                         </div>
                     </div>
@@ -168,6 +171,7 @@
                             <span class="tech-chip"><i class="fas fa-database"></i> MySQL</span>
                             <span class="tech-chip"><i class="fas fa-leaf"></i> MongoDB</span>
                             <span class="tech-chip"><i class="fas fa-database"></i> PostgreSQL</span>
+                            <span class="tech-chip"><i class="fas fa-cloud"></i> Azure / AWS</span>
                             <span class="tech-chip"><i class="fab fa-docker"></i> Docker</span>
                             <span class="tech-chip"><i class="fab fa-git-alt"></i> Git</span>
                         </div>
@@ -186,55 +190,63 @@
         <div class="timeline-container scroll-animate">
             <div class="timeline-line"></div>
 
-            <!-- Experience Card 1 -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
+            <article class="timeline-item">
+                <div class="timeline-dot" aria-hidden="true"></div>
                 <div class="timeline-content glass-card scroll-animate-right">
-                    <h3 class="job-title">[JOB TITLE]</h3>
-                    <h4 class="company-name">[COMPANY NAME]</h4>
+                    <h3 class="job-title">Software Engineer</h3>
+                    <p class="company-name">Digital Value</p>
                     <div class="job-meta">
-                        <span class="job-location"><i class="fas fa-map-marker-alt"></i> [LOCATION]</span>
-                        <span class="job-date"><i class="fas fa-calendar-alt"></i> [START DATE] — Present</span>
+                        <span class="job-location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Kanazawa, Japan</span>
+                        <span class="job-date"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Nov 2026 – Present</span>
                     </div>
-                    <p class="job-desc">[Short description of your role, overall goals, and the value you provided to the organization.]</p>
-                    <ul class="job-bullets">
-                        <li>[Developed full-stack web applications...]</li>
-                        <li>[Designed RESTful APIs and backend services...]</li>
-                        <li>[Integrated AI-powered features...]</li>
-                    </ul>
+                    <p class="job-desc">Work on banking systems across the backend and frontend.</p>
                     <div class="job-tech">
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">Express</span>
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">C# / .NET</span>
+                        <span class="tech-tag">Vue / Nuxt</span>
+                        <span class="tech-tag">Azure</span>
+                        <span class="tech-tag">Datadog</span>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <!-- Experience Card 2 -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
+            <article class="timeline-item">
+                <div class="timeline-dot" aria-hidden="true"></div>
                 <div class="timeline-content glass-card scroll-animate-left">
-                    <h3 class="job-title">[PREVIOUS JOB TITLE]</h3>
-                    <h4 class="company-name">[PREVIOUS COMPANY]</h4>
+                    <h3 class="job-title">Full-Stack Developer</h3>
+                    <p class="company-name">Ekotek Vietnam</p>
                     <div class="job-meta">
-                        <span class="job-location"><i class="fas fa-map-marker-alt"></i> [LOCATION]</span>
-                        <span class="job-date"><i class="fas fa-calendar-alt"></i> [START DATE] — [END DATE]</span>
+                        <span class="job-location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Hanoi, Vietnam</span>
                     </div>
-                    <p class="job-desc">[Short description of your previous responsibilities and key projects.]</p>
+                    <p class="job-desc">Worked on an anti-money laundering (AML) application.</p>
                     <ul class="job-bullets">
-                        <li>[Worked with databases and authentication...]</li>
-                        <li>[Deployed applications using Docker/Nginx...]</li>
-                        <li>[Collaborated with cross-functional teams...]</li>
+                        <li>Updated a batch job that processes AI scoring results and built a mock service to test the integration.</li>
+                        <li>Implemented changes to corporate information workflows across the backend and frontend.</li>
                     </ul>
                     <div class="job-tech">
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">MongoDB</span>
-                        <span class="tech-tag">Git</span>
+                        <span class="tech-tag">C# / .NET</span>
+                        <span class="tech-tag">Vue / Nuxt</span>
+                        <span class="tech-tag">Azure</span>
                     </div>
                 </div>
-            </div>
-            
+            </article>
+
+            <article class="timeline-item">
+                <div class="timeline-dot" aria-hidden="true"></div>
+                <div class="timeline-content glass-card scroll-animate-right">
+                    <h3 class="job-title">Backend Developer Intern</h3>
+                    <p class="company-name">Smiletech Vietnam Co., Ltd.</p>
+                    <div class="job-meta">
+                        <span class="job-location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Vietnam</span>
+                    </div>
+                    <p class="job-desc">Contributed to backend development for an e-commerce project.</p>
+                    <div class="job-tech">
+                        <span class="tech-tag">NestJS</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">GitLab</span>
+                    </div>
+                </div>
+            </article>
         </div>
     </section>
 
@@ -245,81 +257,60 @@
             <h2>My Projects</h2>
         </div>
 
-        <div class="portfolio-filter scroll-animate">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="web">Web</button>
-            <button class="filter-btn" data-filter="app">App</button>
-            <button class="filter-btn" data-filter="design">Design</button>
-        </div>
-
         <div class="portfolio-grid">
-            <div class="portfolio-item" data-category="web">
+            <article class="portfolio-item portfolio-featured">
+                <div class="portfolio-overlay">
+                    <h3>TenantHub</h3>
+                    <p>HUST graduation project. A multi-tenant HR platform with role-based access, recruiting workflows, and CV matching.</p>
+                    <p class="project-stack">Next.js · Express · MySQL · FastAPI</p>
+                    <a href="https://erp-by-nmt.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-link">
+                        <i class="fas fa-external-link-alt" aria-hidden="true"></i> View TenantHub
+                    </a>
+                </div>
+            </article>
+            <div class="portfolio-item">
                 <img src="https://file.hstatic.net/200000472237/article/e-commerce_2d97a88223ca4821aec2ebeb4b2a9a2d.png"
-                    alt="Project 1" class="portfolio-img">
+                    alt="" loading="lazy" class="portfolio-img">
                 <div class="portfolio-overlay">
                     <h3>E-commerce Platform</h3>
                     <p>Modern online shopping platform</p>
-                    <a href="https://eplaza.vn/" target="_blank" class="portfolio-link">
+                    <a href="https://eplaza.vn/" target="_blank" rel="noopener noreferrer" class="portfolio-link">
                         <i class="fas fa-external-link-alt"></i> View Project
                     </a>
                 </div>
             </div>
 
-            <div class="portfolio-item" data-category="web">
+            <div class="portfolio-item">
                 <img src="https://images.ctfassets.net/lzny33ho1g45/5iJ10OKtmYa4BZpYvhb2xw/e890aa9115b53ef2d41c9135902285a2/Best_note_taking_apps.jpg?fm=jpg&q=31&fit=thumb&w=1520&h=760"
-                    alt="Project 2" class="portfolio-img">
+                    alt="" loading="lazy" class="portfolio-img">
                 <div class="portfolio-overlay">
                     <h3>Note App</h3>
                     <p>Web app for taking notes</p>
-                    <a href="https://notes-app-2ilc.vercel.app/login" target="_blank" class="portfolio-link">
+                    <a href="https://notes-app-2ilc.vercel.app/login" target="_blank" rel="noopener noreferrer" class="portfolio-link">
                         <i class="fas fa-external-link-alt"></i> View Project
                     </a>
                 </div>
             </div>
 
-            <div class="portfolio-item" data-category="web">
-                <img src="https://asiky.com/files/images/anh/hotelbooking%20(1).jpg" alt="Project 3"
+            <div class="portfolio-item">
+                <img src="https://asiky.com/files/images/anh/hotelbooking%20(1).jpg" alt="" loading="lazy"
                     class="portfolio-img">
                 <div class="portfolio-overlay">
                     <h3>Booking Web</h3>
                     <p>Web app for booking hotels</p>
-                    <a href="https://hotel-booking-frontend-one.vercel.app/" target="_blank" class="portfolio-link">
+                    <a href="https://hotel-booking-frontend-one.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-link">
                         <i class="fas fa-external-link-alt"></i> View Project
                     </a>
                 </div>
             </div>
 
-            <div class="portfolio-item" data-category="app">
-                <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                    alt="App Project" class="portfolio-img">
-                <div class="portfolio-overlay">
-                    <h3>Mobile Apps</h3>
-                    <p>Coming Soon - Mobile applications will be added here</p>
-                    <div class="portfolio-coming-soon">
-                        <i class="fas fa-clock"></i> Coming Soon
-                    </div>
-                </div>
-            </div>
-
-            <div class="portfolio-item" data-category="design">
-                <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
-                    alt="Design Project" class="portfolio-img">
-                <div class="portfolio-overlay">
-                    <h3>UI/UX Designs</h3>
-                    <p>Coming Soon - Design projects will be added here</p>
-                    <div class="portfolio-coming-soon">
-                        <i class="fas fa-palette"></i> Coming Soon
-                    </div>
-                </div>
-            </div>
-
-            <div class="portfolio-item" data-category="all">
+            <div class="portfolio-item">
                 <img src="https://images.unsplash.com/photo-1618477247222-acbdb0e159b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                    alt="GitHub Projects" class="portfolio-img">
+                    alt="" loading="lazy" class="portfolio-img">
                 <div class="portfolio-overlay">
                     <h3>More Projects</h3>
                     <p>Explore more of my projects on GitHub</p>
-                    <a href="https://github.com/nmtun" target="_blank" class="portfolio-link">
+                    <a href="https://github.com/nmtun" target="_blank" rel="noopener noreferrer" class="portfolio-link">
                         <i class="fab fa-github"></i> View GitHub
                     </a>
                 </div>
@@ -334,85 +325,27 @@
             <h2>Get In Touch</h2>
         </div>
 
-        <div class="contact-container">
-            <div class="contact-info">
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h3>Location</h3>
-                        <p>Hanoi, Vietnam</p>
-                    </div>
-                </div>
-
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h3>Email</h3>
-                        <p>nmtung.work@gmail.com</p>
-                    </div>
-                </div>
-
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone-alt"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h3>Phone</h3>
-                        <p>(+84) 964 654 770</p>
-                    </div>
-                </div>
-
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h3>Working Hours</h3>
-                        <p>All Day</p>
-                    </div>
+        <div class="contact-info contact-options">
+            <div class="contact-card">
+                <div class="contact-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
+                <div class="contact-details">
+                    <h3>Location</h3>
+                    <p>Kanazawa, Japan</p>
                 </div>
             </div>
-
-            <div class="contact-form scroll-animate-right">
-                <form id="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
-                        <span class="error-message" id="name-error"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" class="form-control" placeholder="Your Email"
-                            required>
-                        <span class="error-message" id="email-error"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject">
-                        <span class="error-message" id="subject-error"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <textarea id="message" name="message" class="form-control" placeholder="Your Message" rows="5"
-                            required></textarea>
-                        <div class="form-helper">
-                            <span class="char-count" id="char-count">0/500</span>
-                        </div>
-                        <span class="error-message" id="message-error"></span>
-                    </div>
-
-                    <button type="submit" class="submit-btn" id="submit-btn">
-                        <span class="btn-text">Send Message</span>
-                        <span class="btn-loading" style="display: none;">
-                            <i class="fas fa-spinner fa-spin"></i> Sending...
-                        </span>
-                    </button>
-
-                    <div class="form-status" id="form-status"></div>
-                </form>
+            <div class="contact-card">
+                <div class="contact-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+                <div class="contact-details">
+                    <h3>Email</h3>
+                    <a href="mailto:nmtung.work@gmail.com">nmtung.work@gmail.com</a>
+                </div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></div>
+                <div class="contact-details">
+                    <h3>LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/nguyen-manh-tung-12878530a/">Nguyen Manh Tung</a>
+                </div>
             </div>
         </div>
     </section>
@@ -420,7 +353,7 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <a href="#" class="footer-logo">
+            <a href="#home" class="footer-logo">
                 <img src="logo.png" alt="nmtun logo" class="footer-logo-img">
                 <span class="footer-logo-text">nm<span>tun</span></span>
             </a>
@@ -428,18 +361,19 @@
             <ul class="footer-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#portfolio">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
 
             <div class="footer-social">
-                <a href="https://github.com/nmtun"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/nguyen-manh-tung-12878530a/"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://facebook.com/rudeuss"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/toon_moc/"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/nmtun" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/nguyen-manh-tung-12878530a/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://facebook.com/rudeuss" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/toon_moc/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
 
-            <p class="copyright">© 2025 nmtun. All Rights Reserved.</p>
+            <p class="copyright">© 2026 nmtun. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -450,7 +384,6 @@
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="script.js"></script>
 </body>
 
