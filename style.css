@@ -912,26 +912,24 @@ header.scrolled {
     font-size: 0.85rem;
 }
 
-.portfolio-link {
+.btn.portfolio-link {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    padding: 0.5rem 1rem;
-    border: 2px solid var(--accent);
-    border-radius: 25px;
+    width: auto;
+    padding: 0.55rem 1rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
 }
 
 .portfolio-card-body .portfolio-link {
     margin-top: auto;
 }
 
-.portfolio-link:hover,
 .portfolio-link:focus-visible {
-    background: #fff;
-    color: #17142e;
+    outline: 2px solid var(--light);
+    outline-offset: 3px;
 }
 
 .portfolio-footer {
