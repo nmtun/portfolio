@@ -96,85 +96,61 @@
     </section>
 
 <!-- About Section -->
-    <section class="section" id="about">
-        <div class="about-content premium-layout">
-            <!-- LEFT: Image -->
-            <div class="about-image-new scroll-animate-left">
-                <div class="image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
-                        alt="Nguyen Manh Tung - Developer Workspace">
-                </div>
+    <section class="section" id="about" aria-labelledby="about-heading">
+        <div class="about-layout">
+            <div class="about-intro">
+                <h2 id="about-heading">About Me</h2>
+                <p class="about-lead">I’m a software engineer based in Kanazawa, Japan.</p>
+                <p>I work on banking systems at Digital Value. My previous work includes anti-money laundering software and e-commerce backend development.</p>
+                <p>I graduated from Hanoi University of Science and Technology’s Vietnam–Japan IT program. For my graduation project, I built <a href="#portfolio">TenantHub</a>, a multi-tenant HR platform with CV matching.</p>
             </div>
-
-            <!-- RIGHT: Content -->
-            <div class="about-text-new scroll-animate-right">
-                <span class="eyebrow-text">ABOUT ME</span>
-                <h2>Software Engineer & Full-stack Developer</h2>
-                
-                <div class="about-paragraphs">
-                    <p>I’m a software engineer based in Kanazawa, Japan. My experience spans banking software, anti-money laundering applications, and e-commerce backend development.</p>
-                    <p>I graduated from Hanoi University of Science and Technology through its Vietnam–Japan IT program. For my graduation project, I built TenantHub, a multi-tenant HR platform with a CV matching service.</p>
-                </div>
-
-                <!-- Status Card -->
-                <div class="status-card scroll-animate">
-                    <div class="status-indicator">
-                        <div class="status-dot pulse-animation"></div>
-                    </div>
-                    <div class="status-info">
-                        <span class="status-title">Currently</span>
-                        <span class="status-role">Software Engineer</span>
-                        <span class="status-desc">Digital Value · Banking systems</span>
-                    </div>
-                </div>
-
-                <!-- Highlight Cards -->
-                <div class="highlights-grid scroll-animate">
-                    <div class="highlight-card"><span>HUST / IT Graduate</span></div>
-                    <div class="highlight-card"><span>Full-stack Development</span></div>
-                    <div class="highlight-card"><span>AI × Web</span></div>
-                </div>
-
-                <!-- Tech Stack Chips -->
-                <div class="tech-stack-container scroll-animate">
-                    <div class="tech-group">
+            <img class="about-photo" src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80"
+                alt="" loading="lazy">
+            <div class="about-skills">
+                <h3>Tech Stack</h3>
+                <div class="about-skills-grid">
+                    <div class="about-skill-group">
                         <h4>Frontend</h4>
-                        <div class="tech-chips">
-                            <span class="tech-chip"><i class="fab fa-react"></i> React</span>
-                            <span class="tech-chip"><i class="fab fa-vuejs"></i> Vue / Nuxt</span>
-                            <span class="tech-chip"><i class="fab fa-js"></i> JavaScript</span>
-                            <span class="tech-chip"><i class="fab fa-html5"></i> HTML/CSS</span>
-                        </div>
+                        <ul>
+                            <li>React</li>
+                            <li>Next.js</li>
+                            <li>Vue</li>
+                            <li>Nuxt</li>
+                            <li>JavaScript</li>
+                            <li>HTML/CSS</li>
+                        </ul>
                     </div>
-
-                    <div class="tech-group">
+                    <div class="about-skill-group">
                         <h4>Backend</h4>
-                        <div class="tech-chips">
-                            <span class="tech-chip"><i class="fab fa-node-js"></i> Node.js</span>
-                            <span class="tech-chip"><i class="fas fa-server"></i> C# / .NET</span>
-                            <span class="tech-chip"><i class="fas fa-server"></i> NestJS / Express.js</span>
-                            <span class="tech-chip"><i class="fas fa-network-wired"></i> REST API</span>
-                        </div>
+                        <ul>
+                            <li>C# / .NET</li>
+                            <li>Node.js</li>
+                            <li>NestJS</li>
+                            <li>Express</li>
+                            <li>REST APIs</li>
+                        </ul>
                     </div>
-
-                    <div class="tech-group">
-                        <h4>AI / Data</h4>
-                        <div class="tech-chips">
-                            <span class="tech-chip"><i class="fab fa-python"></i> Python</span>
-                            <span class="tech-chip"><i class="fas fa-brain"></i> Machine Learning</span>
-                        </div>
+                    <div class="about-skill-group">
+                        <h4>Data &amp; AI</h4>
+                        <ul>
+                            <li>MySQL</li>
+                            <li>PostgreSQL</li>
+                            <li>MongoDB</li>
+                            <li>Python</li>
+                            <li>FastAPI</li>
+                            <li>Machine Learning</li>
+                        </ul>
                     </div>
-
-                    <div class="tech-group">
-                        <h4>Database / Infrastructure</h4>
-                        <div class="tech-chips">
-                            <span class="tech-chip"><i class="fas fa-database"></i> MySQL</span>
-                            <span class="tech-chip"><i class="fas fa-leaf"></i> MongoDB</span>
-                            <span class="tech-chip"><i class="fas fa-database"></i> PostgreSQL</span>
-                            <span class="tech-chip"><i class="fas fa-cloud"></i> Azure / AWS</span>
-                            <span class="tech-chip"><i class="fab fa-docker"></i> Docker</span>
-                            <span class="tech-chip"><i class="fab fa-git-alt"></i> Git</span>
-                        </div>
+                    <div class="about-skill-group">
+                        <h4>Cloud &amp; Tooling</h4>
+                        <ul>
+                            <li>Azure</li>
+                            <li>AWS</li>
+                            <li>Docker</li>
+                            <li>Git</li>
+                            <li>GitLab</li>
+                            <li>Datadog</li>
+                        </ul>
                     </div>
                 </div>
             </div>
